@@ -1,0 +1,53 @@
+.v-contact-list {
+    width: 100%;
+
+    .v-contact {
+        position: relative;
+        @include align-items;
+        padding: 10px;
+        background: $dark-gray;
+        margin: 1px 0;
+
+        &__avatar-container {
+            position: relative;
+
+            .v-contact__avatar {
+                width: 50px;
+                height: 50px;
+                background: $gray;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            .v-contact__status {
+                position: absolute;
+                bottom: 3px;
+                right: 10px;
+                width: 12px;
+                height: 12px;
+                border: 2px solid $dark-gray;
+                border-radius: 50%;
+                background: $green;
+            }
+        }
+
+        &__container {
+            &-chat-name {
+                color: $white;
+                font-weight: $medium;
+            }
+
+            &-last-message {
+                color: $gray;
+            }
+        }
+
+        &__last-message-time {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: $gray;
+            font-size: 12px;
+        }
+    }
+}

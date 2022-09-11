@@ -1,0 +1,51 @@
+// Миксины
+@mixin full-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin align-items {
+    display: flex;
+    align-items: center;
+}
+
+@mixin j-content {
+    display: flex;
+    justify-content: center;
+}
+
+// Переменные
+$black: #000;
+$white: #fff;
+$dark: #1a1a00;
+$light-gray: #ededed;
+$gray: #a6a6a6;
+$dark-gray: #141414;
+$dark-gray2: #242424;
+$green: #25ff22;
+$msg-green: rgba(37, 255, 34, .7);
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+
+// Шрифты
+@import "fonts";
+
+// Общие стили
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'RobotoMono', sans-serif;
+    background: $dark;
+}
+
+// Импорты стилей
+@import "layouts/header";
+@import "contacts/contact";
+@import "contacts/chat";

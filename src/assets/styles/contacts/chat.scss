@@ -1,0 +1,71 @@
+.v-user-chat {
+    position: relative;
+
+    &__msg-container {
+        .v-message {
+            display: inline-flex;
+            padding: 5px;
+
+            &__text {
+                font-size: 16px;
+                color: $white;
+                align-self: center;
+            }
+
+            &__time {
+                font-size: 12px;
+                color: $gray;
+                align-self: flex-end;
+            }
+        }
+
+        .own {
+            background: $msg-green;
+            justify-self: end;
+            
+            .v-message__time {
+                color: $dark;
+            }
+        }
+
+        .others {
+            background: $dark-gray2;
+            justify-self: start;
+        }
+    }
+
+    &__input-container {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        @include align-items;
+        background: $dark-gray2;
+        padding: 5px 10px;
+
+        .material-icons {
+            color: $gray;
+        }
+
+        &__msg-input {
+            height: 28px;
+            width: 100%;
+            border: none;
+            background: inherit;
+            outline: none;
+            caret-color: $green;
+            margin-left: 5px;
+            font-size: 16px;
+            color: $white;
+
+            &::placeholder {
+                color: $gray;
+                font-size: 16px;
+            }
+        }
+
+        &__clip {
+            margin-left: auto;
+            margin-right: 10px;
+        }
+    }
+}

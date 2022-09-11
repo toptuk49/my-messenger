@@ -1,0 +1,79 @@
+.v-header {
+    .material-icons {
+        color: $white;
+    }
+
+    .v-default-header {
+        @include align-items;
+        background: $dark-gray2;
+        padding: 20px 10px;
+        color: $white;
+    
+        .v-left-to-right-dropdown {
+            @include align-items;
+            margin-right: 10px;
+        }
+    }
+
+    .v-user-chat-header {
+        @include align-items;
+        justify-content: space-between;
+        background: $dark-gray2;
+        padding: 10px 10px;
+
+        &__main {
+            @include align-items;
+
+            &__back {
+                @include align-items;
+                color: $white;
+                margin-right: 10px;
+    
+                .material-icons {
+                    font-size: 30px;
+                }
+            }
+            
+            &__avatar {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                background: $gray;
+                margin-right: 10px;
+            }
+    
+            &__user-container {
+                &__username {
+                    color: $white;
+                    font-size: 14px;
+                }
+    
+                &__last-online-time {
+                    font-weight: $regular;
+                    word-spacing: -3px;
+                    font-size: 12px;
+                }
+
+                .offline {
+                    color: $gray;
+                }
+
+                .online {
+                    color: $green;
+                }
+            }
+        }
+
+        &__communication {
+            @include align-items;
+
+            &__video-call {
+                margin-right: 5px;
+
+                .material-icons {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
