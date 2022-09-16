@@ -2,14 +2,25 @@
     position: relative;
 
     &__msg-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
         .v-message {
-            display: inline-flex;
+            display: flex;
             padding: 5px;
+            margin: 10px;
+            max-width: 80%;
+
+            &:nth-child(n + 2) {
+                margin-top: 0;
+            }
 
             &__text {
                 font-size: 16px;
                 color: $white;
                 align-self: center;
+                margin-right: 5px;
             }
 
             &__time {
@@ -21,7 +32,7 @@
 
         .own {
             background: $msg-green;
-            justify-self: end;
+            align-self: flex-end;
             
             .v-message__time {
                 color: $dark;
@@ -30,7 +41,7 @@
 
         .others {
             background: $dark-gray2;
-            justify-self: start;
+            align-self: flex-start;
         }
     }
 

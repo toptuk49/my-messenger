@@ -6,7 +6,7 @@
             </div>
             <div class="v-user-chat-header__main__avatar"></div>
             <div class="v-user-chat-header__main__user-container">
-                <div class="v-user-chat-header__main__user-container__username">{{ currentUserChat.name }}</div>
+                <div class="v-user-chat-header__main__user-container__username">{{ currentUser.name }}</div>
                 <div class="v-user-chat-header__main__user-container__last-online-time" :class="className">{{ formatStatus }}</div>
             </div>
         </div>
@@ -28,15 +28,15 @@
         name: 'v-user-chat-header',
         computed: {
             ...mapState([
-                'currentUserChat'
+                'currentUser'
             ]),
             formatStatus() {
-                return this.currentUserChat.status === 'offline' ? 'был(а) в сети Давно' : 'в сети'
+                return this.currentUser.status === 'offline' ? 'был(а) в сети Давно' : 'в сети'
             },
             className() {
                 return {
-                    'online': this.currentUserChat.status === 'online',
-                    'offline': this.currentUserChat.status === 'offline'
+                    'online': this.currentUser.status === 'online',
+                    'offline': this.currentUser.status === 'offline'
                 }
             }
         },

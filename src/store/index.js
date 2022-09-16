@@ -5,7 +5,7 @@ export default createStore({
   state: {
     contacts: [],
     chats: [],
-    currentUserChat: {}
+    currentUser: {}
   },
   getters: {
   },
@@ -17,7 +17,7 @@ export default createStore({
       state.chats = chats
     },
     SET_USER_TO_HEAD(state, user) {
-      user ? state.currentUserChat = user : state.currentUserChat = ''
+      user ? state.currentUser = user : state.currentUser = ''
     }
   },
   actions: {
@@ -35,6 +35,13 @@ export default createStore({
     },
     SET_USER_TO_HEADER({commit}, user) {
       commit('SET_USER_TO_HEAD', user)
+    },
+    // eslint-disable-next-line
+    SEND_MESSAGE({commit}, {user_id, chat}) {
+      return axios.put('http://localhost:3000/chats/' + user_id, chat)
+        .then((response) => {
+          return response
+        })
     }
   },
   modules: {

@@ -4,8 +4,7 @@
             v-for="contact in contacts"
             :key="contact.id"
             :contact_data="contact"
-            :chat_data="chats[contact.id - 1]"
-            @click="toUserChat(contact)"
+            :chat="chats[contact.id - 1]"  
         />
     </div>
 </template>
@@ -28,17 +27,8 @@
         methods: {
             ...mapActions([
                 'FETCH_CONTACTS',
-                'FETCH_CHATS',
-                'SET_USER_TO_HEADER'
+                'FETCH_CHATS'
             ]),
-            toUserChat(contact) {
-                this.$router.push({
-                    name: 'chat',
-                    query: {'id': contact.id}
-                })
-                let user = {name: contact.name, status: contact.status}
-                this.SET_USER_TO_HEADER(user)
-            }
         },
         mounted() {
             this.FETCH_CONTACTS();
